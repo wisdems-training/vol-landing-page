@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer | Wisconsin Democratic Party</title>
+    <link rel="stylesheet" href="styles.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap" rel="stylesheet"> <!-- Lora for header and explainer text -->
+
+    <!-- JavaScript to handle random background image and countdown -->
+    <script>
+        const backgroundImages = [
+            "assets/field_blur2.jpg",
+        ];
+
+        // Function to set random background
+        function setRandomBackground() {
+            const randomImage = backgroundImages[Math.floor(Math.random() * backgroundImages.length)];
+            document.body.style.backgroundImage = `url(${randomImage})`;
+        }
+
+        // Function to calculate and display countdown
+        function calculateCountdown() {
+            const electionDate = new Date('November 5, 2024');
+            const currentDate = new Date();
+            const timeDiff = electionDate - currentDate;
+            const daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+            
+            // Update the countdown div with the days left
+            document.getElementById('countdown').innerHTML = `THE ELECTION IS IN ${daysDiff} DAYS`;
+        }
+
+        // Call the functions when the page loads
+        window.onload = function() {
+            setRandomBackground();
+            calculateCountdown();
+        };
+    </script>
+</head>
+<body>
+
+    <div class="container">
+
+
+        <h2 class="main-title">Volunteer with the Democratic Party of Wisconsin!</h2>
+		        <!-- Countdown message -->
+        <div id="countdown" class="countdown"></div>
+		<h1 class="subheader">Elections in Wisconsin routinely come down to just a few thousand votes.</h1>
+
+
+        <!-- Knock on doors section -->
+
+        <div class="section">
+            <a href="https://www.mobilize.us/wisdems/?end_date=2024-11-06T05%3A59%3A59.999Z&event_type=1&start_date=2024-10-19T05%3A00%3A00.000Z" class="button">Knock on doors</a>
+            <p class="explainer-text">Have the biggest impact possible!</p>
+        </div>
+		
+		<!-- Join phone bank section -->
+        <div class="section">
+            <a href="https://www.mobilize.us/wisdems/event/701123/" class="button">Join a phone bank</a>
+            <p class="explainer-text">Make calls from anywhere!</p>
+        </div>
+
+        <!-- Learn more section -->
+        <div class="section">
+            <a href="https://www.mobilize.us/wisdems/event/670186/" class="button">Tell me more</a>
+            <p class="explainer-text">Attend a volunteer welcome session!</p>
+        </div>
+
+        <!-- Reach app section -->
+        <div class="section">
+            <a href="https://www.reach.vote/get-the-app/" class="button">Download the Reach app</a>
+            <p class="explainer-text">Make sure your friends and family vote!</p>
+        </div>
+
+        <!-- Additional message box -->
+   <!--     <div class="message-box">
+            <p>Together we will elect Kamala Harris, send Tammy Baldwin back to the Senate, and elect Democrats across Wisconsin.</p>
+        </div> -->
+	
+		<div class="logo">
+            <img src="assets/logo-dark.svg" alt="Wisconsin Dems Logo">
+        </div>
+		
+		
+        <!-- Disclaimer -->
+        <div class="footer-disclaimer">
+            <p>Paid for by the Democratic Party of Wisconsin, Ben Wikler, Chair.</p>
+            <p>wisdems.org | Not authorized by any candidate or candidate’s committee</p>
+        </div>
+    </div>
+
+</body>
+</html>
